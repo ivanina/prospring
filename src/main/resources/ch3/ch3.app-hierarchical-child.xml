@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="prospring.ch3.hierarchical.SimpleTarget" id="target1" p:val-ref="injectBean"/>
+    <bean class="prospring.ch3.hierarchical.SimpleTarget" id="target2" p:val-ref="injectBeanParent"/>
+    <bean class="prospring.ch3.hierarchical.SimpleTarget" id="target3" >
+        <property name="val">
+            <ref parent="injectBean"/>
+        </property>
+    </bean>
+
+    <bean id="injectBean" class="java.lang.String" c:_0="Child bean"/>
+
+</beans>

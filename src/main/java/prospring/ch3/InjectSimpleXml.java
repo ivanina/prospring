@@ -12,7 +12,7 @@ public class InjectSimpleXml {
     private Integer age;
     public static void main(String[] args) {
         GenericXmlApplicationContext cntx = new GenericXmlApplicationContext();
-        cntx.load("classpath:ch3.app-inject-simple-sml.xml");
+        cntx.load("classpath:ch3/ch3.app-inject-simple-sml.xml");
         cntx.refresh();
 
         InjectSimpleXml simple = cntx.getBean("injectSimple", InjectSimpleXml.class);

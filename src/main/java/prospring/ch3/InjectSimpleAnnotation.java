@@ -16,7 +16,7 @@ public class InjectSimpleAnnotation {
     private Integer age;
     public static void main(String[] args) {
         GenericXmlApplicationContext cntx = new GenericXmlApplicationContext();
-        cntx.load("classpath:ch3.app-inject-simple-annotation.xml");
+        cntx.load("classpath:ch3/ch3.app-inject-simple-annotation.xml");
         cntx.refresh();
 
         InjectSimpleAnnotation simple = cntx.getBean("injectSimple",InjectSimpleAnnotation.class);

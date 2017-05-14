@@ -14,9 +14,9 @@ public class AppSetterAndConstructorDITest {
     public static void main(String[] args){
         GenericXmlApplicationContext cntx = new GenericXmlApplicationContext();
         //1
-        //cntx.load("classpath:ch3.app-xml-setterDI.xml");
+        //cntx.load("classpath:ch3/ch3.app-xml-setterDI.xml");
         //2
-        cntx.load("ch3.app-annotation-setterDI.xml");
+        cntx.load("ch3/ch3.app-annotation-setterDI.xml");
         cntx.refresh();
         MessageRender render = cntx.getBean("messageRenderAnnotation", MessageRender.class);
         render.render();
