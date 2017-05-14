@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="parentBean" class="prospring.ch3.inherit.SimpleBean">
+        <property name="name" value="Elvis"/>
+        <property name="age" value="50" />
+    </bean>
+    <bean id="childBean" class="prospring.ch3.inherit.SimpleBean" parent="parentBean">
+        <property name="age" value="70"/>
+    </bean>
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="replacer" class="prospring.ch3.method_replacement.FormatMessageReplacer"/>
+    <bean id="formatter" class="prospring.ch3.method_replacement.FormatterMessage">
+        <replaced-method name="formatMessage" replacer="replacer">
+            <arg-type>String</arg-type>
+        </replaced-method>
+    </bean>
+    <bean id="normalFormatter" class="prospring.ch3.method_replacement.FormatterMessage"/>
+
+</beans>
