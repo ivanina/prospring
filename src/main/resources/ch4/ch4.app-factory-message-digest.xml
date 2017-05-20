@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="shaDigest" class="prospring.ch4.factory.MessageDigestFactoryBean">
+        <property name="algorithmName" value="SHA1"/>
+    </bean>
+    <bean id="defaultDigest" class="prospring.ch4.factory.MessageDigestFactoryBean"/>
+
+    <bean id="digester" class="prospring.ch4.factory.MessageDigester">
+        <property name="digest1" ref="shaDigest"/>
+        <property name="digest2" ref="defaultDigest"/>
+    </bean>
+
+    <!-- using factory-bean and factory-method -->
+
+    <bean id="shaDigestFactory" class="prospring.ch4.factory.MessageDigestFactoryBean2">
+        <property name="algorithmName" value="SHA1"/>
+    </bean>
+    <bean id="defaultDigestFactory" class="prospring.ch4.factory.MessageDigestFactoryBean2"/>
+
+    <bean id="shaDigestBean"
+          factory-bean="shaDigestFactory"
+          factory-method="createInstance"/>
+    <bean id="defaultDigestBean"
+          factory-bean="defaultDigestFactory"
+          factory-method="createInstance"/>
+    <bean id="digester2"
+          class="prospring.ch4.factory.MessageDigester"
+          p:digest1-ref="shaDigestBean"
+          p:digest2-ref="defaultDigestBean"/>
+
+</beans>

@@ -1,12 +1,12 @@
 package prospring.ch3;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
+import prospring.ch3.annotation.MessageRender;
 
 /**
  * change import 1 nd 2 for xml and annotation - coliseum by name
  */
 //1
-import prospring.ch3.annotation.MessageRender;
 //2
 //import prospring.ch3.xml.MessageRender;
 
