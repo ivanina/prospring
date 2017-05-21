@@ -4,7 +4,6 @@ import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public class MessageDigestFactoryBean implements FactoryBean<MessageDigest> , InitializingBean {
 
